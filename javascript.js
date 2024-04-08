@@ -7,33 +7,16 @@ const gear2 = document.getElementById("gear2");
 const gear3 = document.getElementById("gear3");
 const profilediv = document.getElementById("profiledetails");
 const educdiv = document.getElementById("educdiv");
+const expdiv = document.getElementById("exp");
+const projdiv = document.getElementById("proj");
+const condiv = document.getElementById("cont");
 
-// Add event listeners to the navigation items
-document.getElementById("profile").addEventListener("click", moveDivs);
 
-// Define function to move divs
-function moveDivs(event) {
-    // Move div1 to the left
-    div1.style.transform = "translateX(-100%)";
-    div2.style.transform = "translateX(100%)";
-    // Move div2 to the right
-   
-    
-
-    gear.style.transform += "rotate(180deg)";
-    gear2.style.transform += "rotate(180deg)";
-    gear3.style.transform += "rotate(180deg)";
-    profilediv.style.display = "block";
-    educdiv.style.display = "none";
-    educdiv.style.top = "100%";
-    document.querySelector('.titlebar h1').textContent = "Profile";
-    // Prevent default link behavior
-    event.preventDefault();
-}
 document.getElementById("home").addEventListener("click", moveHome);
 
 // Define function to move divs
 function moveHome(event) {
+    document.querySelector('.titlebar h1').textContent = "Welcome";
     // Move div1 to the left
     div1.style.transform = "translateX(0)";
     // Move div2 to the right
@@ -45,30 +28,208 @@ function moveHome(event) {
     profilediv.style.display = "none";
     educdiv.style.display = "none";
     educdiv.style.top = "100%";
-    document.querySelector('.titlebar h1').textContent = "Welcome";
+  
 
     // Prevent default link behavior
     event.preventDefault();
 }
 
+
+// Add event listeners to the navigation items
+document.getElementById("profile").addEventListener("click", moveDivs);
+
+// Define function to move divs
+function moveDivs(event) {
+    // Close existing content with a delay
+    
+    educdiv.style.display = "none";
+    expdiv.style.display = "none";
+    projdiv.style.display ="none";
+    condiv.style.display = "none";
+    
+    document.querySelector('.titlebar h1').textContent = "Profile";
+    setTimeout(function() {
+        // Move div1 and div2 to the sides
+        div1.style.transform = "translateX(0)";
+        div2.style.transform = "translateX(0)";
+        gear.style.transform += "rotate(-180deg)";
+            gear2.style.transform += "rotate(-180deg)";
+            gear3.style.transform += "rotate(-180deg)";
+         
+        // Open "Profile" content after a delay
+        setTimeout(function() {
+            profilediv.style.display = "block";
+            div1.style.transform = "translateX(-100%)";
+            div2.style.transform = "translateX(100%)";
+            gear.style.transform += "rotate(180deg)";
+            gear2.style.transform += "rotate(180deg)";
+            gear3.style.transform += "rotate(180deg)";
+      
+            
+            educdiv.style.top = "100%";
+          
+        }, 450); // Adjust delay time (in milliseconds) as needed
+    }, 50); // Adjust delay time (in milliseconds) as needed
+
+    // Prevent default link behavior
+    event.preventDefault();
+}
+
+
+
 document.getElementById("education").addEventListener("click", moveeduc);
 
 // Define function to move divs
 function moveeduc(event) {
-    // Move div1 to the left
-    div1.style.transform = "translateX(200%)";
-    div2.style.transform = "translateX(-200%)";
-    // Move div2 to the right
-   
-   
-    educdiv.style.top = "0";
-     
-    gear.style.transform += "rotate(180deg)";
-    gear2.style.transform += "rotate(180deg)";
-    gear3.style.transform += "rotate(180deg)";
+    // Close existing content with a delay
     profilediv.style.display = "none";
-    educdiv.style.display = "block";
-    document.querySelector('.titlebar h1').textContent = "Education";
+    expdiv.style.display = "none";
+    projdiv.style.display ="none";
+    condiv.style.display = "none";
+    
+    setTimeout(function() {
+        document.querySelector('.titlebar h1').textContent = "Education";
+        // Move div1 and div2 to the sides
+        div1.style.transform = "translateX(0)";
+        div2.style.transform = "translateX(0)";
+        gear.style.transform += "rotate(-180deg)";
+            gear2.style.transform += "rotate(-180deg)";
+            gear3.style.transform += "rotate(-180deg)";
+          
+        
+        educdiv.style.top = "0";
+        // Open "Education" content after a delay
+        setTimeout(function() {
+            educdiv.style.display = "block";
+            div1.style.transform = "translateX(-100%)";
+            div2.style.transform = "translateX(100%)";
+            gear.style.transform += "rotate(180deg)";
+            gear2.style.transform += "rotate(180deg)";
+            gear3.style.transform += "rotate(180deg)";
+           
+           
+        }, 450); // Adjust delay time (in milliseconds) as needed
+    }, 50); // Adjust delay time (in milliseconds) as needed
+
+    // Prevent default link behavior
+    event.preventDefault();
+}
+
+
+document.getElementById("experience").addEventListener("click", moveexp);
+
+// Define function to move divs
+function moveexp(event) {
+    // Close existing content with a delay
+    profilediv.style.display = "none";
+    educdiv.style.display = "none";
+    condiv.style.display = "none";
+    projdiv.style.display ="none";
+    
+    setTimeout(function() {
+        document.querySelector('.titlebar h1').textContent = "Experience";
+        // Move div1 and div2 to the sides
+        div1.style.transform = "translateX(0)";
+        div2.style.transform = "translateX(0)";
+        gear.style.transform += "rotate(-180deg)";
+            gear2.style.transform += "rotate(-180deg)";
+            gear3.style.transform += "rotate(-180deg)";
+          
+        
+        educdiv.style.top = "0";
+        // Open "Education" content after a delay
+        setTimeout(function() {
+            educdiv.style.display = "block";
+            div1.style.transform = "translateX(-100%)";
+            div2.style.transform = "translateX(100%)";
+            gear.style.transform += "rotate(180deg)";
+            gear2.style.transform += "rotate(180deg)";
+            gear3.style.transform += "rotate(180deg)";
+           
+           
+        }, 450); // Adjust delay time (in milliseconds) as needed
+    }, 50); // Adjust delay time (in milliseconds) as needed
+
+    // Prevent default link behavior
+    event.preventDefault();
+}
+
+
+document.getElementById("projects").addEventListener("click", moveproj);
+
+// Define function to move divs
+function moveproj(event) {
+    // Close existing content with a delay
+    profilediv.style.display = "none";
+    educdiv.style.display = "none";
+    expdiv.style.display = "none";
+    condiv.style.display = "none";
+    
+    
+    setTimeout(function() {
+        document.querySelector('.titlebar h1').textContent = "Projects";
+        // Move div1 and div2 to the sides
+        div1.style.transform = "translateX(0)";
+        div2.style.transform = "translateX(0)";
+        gear.style.transform += "rotate(-180deg)";
+            gear2.style.transform += "rotate(-180deg)";
+            gear3.style.transform += "rotate(-180deg)";
+          
+        
+        educdiv.style.top = "0";
+        // Open "Education" content after a delay
+        setTimeout(function() {
+            educdiv.style.display = "block";
+            div1.style.transform = "translateX(-100%)";
+            div2.style.transform = "translateX(100%)";
+            gear.style.transform += "rotate(180deg)";
+            gear2.style.transform += "rotate(180deg)";
+            gear3.style.transform += "rotate(180deg)";
+           
+           
+        }, 450); // Adjust delay time (in milliseconds) as needed
+    }, 50); // Adjust delay time (in milliseconds) as needed
+
+    // Prevent default link behavior
+    event.preventDefault();
+}
+
+document.getElementById("contacts").addEventListener("click", moveCon);
+
+// Define function to move divs
+function moveCon(event) {
+    // Close existing content with a delay
+    profilediv.style.display = "none";
+    educdiv.style.display = "none";
+    expdiv.style.display = "none";
+    projdiv.style.display ="none";
+    
+    
+    
+    setTimeout(function() {
+        document.querySelector('.titlebar h1').textContent = "Contacts";
+        // Move div1 and div2 to the sides
+        div1.style.transform = "translateX(0)";
+        div2.style.transform = "translateX(0)";
+        gear.style.transform += "rotate(-180deg)";
+            gear2.style.transform += "rotate(-180deg)";
+            gear3.style.transform += "rotate(-180deg)";
+          
+        
+        educdiv.style.top = "0";
+        // Open "Education" content after a delay
+        setTimeout(function() {
+            educdiv.style.display = "block";
+            div1.style.transform = "translateX(-100%)";
+            div2.style.transform = "translateX(100%)";
+            gear.style.transform += "rotate(180deg)";
+            gear2.style.transform += "rotate(180deg)";
+            gear3.style.transform += "rotate(180deg)";
+           
+           
+        }, 450); // Adjust delay time (in milliseconds) as needed
+    }, 50); // Adjust delay time (in milliseconds) as needed
+
     // Prevent default link behavior
     event.preventDefault();
 }
