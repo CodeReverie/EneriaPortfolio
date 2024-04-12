@@ -12,10 +12,22 @@ const projdiv = document.getElementById("proj");
 const condiv = document.getElementById("cont");
 
 
+const CollegeText = document.getElementById("CollegeText");
+const CollegeText2 = document.getElementById("CollegeText2");
+
+
+const SHSText = document.getElementById("SHSText");
+const SHSText2 = document.getElementById("SHSText2");
+
+
+
+
+
 document.getElementById("home").addEventListener("click", moveHome);
 
 // Define function to move divs
 function moveHome(event) {
+    
     document.querySelector('.titlebar h1').textContent = "Welcome";
     // Move div1 to the left
     div1.style.transform = "translateX(0)";
@@ -25,9 +37,13 @@ function moveHome(event) {
     gear.style.transform += "rotate(-180deg)";
     gear2.style.transform += "rotate(-180deg)";
     gear3.style.transform += "rotate(-180deg)";
+
     profilediv.style.display = "none";
     educdiv.style.display = "none";
-    educdiv.style.top = "100%";
+    expdiv.style.display = "none";
+    projdiv.style.display ="none";
+    condiv.style.display = "none";
+    
   
 
     // Prevent default link behavior
@@ -42,6 +58,7 @@ document.getElementById("profile").addEventListener("click", moveDivs);
 function moveDivs(event) {
     // Close existing content with a delay
     
+    profilediv.style.display = "none";
     educdiv.style.display = "none";
     expdiv.style.display = "none";
     projdiv.style.display ="none";
@@ -66,8 +83,7 @@ function moveDivs(event) {
             gear3.style.transform += "rotate(180deg)";
       
             
-            educdiv.style.top = "100%";
-          
+   
         }, 450); // Adjust delay time (in milliseconds) as needed
     }, 50); // Adjust delay time (in milliseconds) as needed
 
@@ -95,9 +111,7 @@ function moveeduc(event) {
         gear.style.transform += "rotate(-180deg)";
             gear2.style.transform += "rotate(-180deg)";
             gear3.style.transform += "rotate(-180deg)";
-          
-        
-        educdiv.style.top = "0";
+       
         // Open "Education" content after a delay
         setTimeout(function() {
             educdiv.style.display = "block";
@@ -114,6 +128,40 @@ function moveeduc(event) {
     // Prevent default link behavior
     event.preventDefault();
 }
+
+document.getElementById("Buttonlogo").addEventListener("click", College);
+
+// Define function to move divs
+function College(event) {
+    CollegeText2.style.display = "block";
+    CollegeText.style.display = "none";
+    // Prevent default link behavior
+    event.preventDefault();
+}
+
+document.getElementById("Buttonlogo2").addEventListener("click", SHS);
+
+const Buttonlogo2 = document.getElementById("Buttonlogo2");
+
+Buttonlogo2.addEventListener('click', function(){
+    SHSText2.style.display("block");
+    Buttonlogo2.classList.add('hidden');
+});
+
+// Define function to move divs
+function SHS(event) {
+    SHSText2.style.display = "block";
+    SHSText.style.display = "none";
+    // Prevent default link behavior
+    event.preventDefault();
+}
+
+
+
+
+
+
+
 
 
 document.getElementById("experience").addEventListener("click", moveexp);
@@ -135,11 +183,10 @@ function moveexp(event) {
             gear2.style.transform += "rotate(-180deg)";
             gear3.style.transform += "rotate(-180deg)";
           
-        
-        educdiv.style.top = "0";
+    
         // Open "Education" content after a delay
         setTimeout(function() {
-            educdiv.style.display = "block";
+            expdiv.style.display = "block";
             div1.style.transform = "translateX(-100%)";
             div2.style.transform = "translateX(100%)";
             gear.style.transform += "rotate(180deg)";
@@ -176,10 +223,10 @@ function moveproj(event) {
             gear3.style.transform += "rotate(-180deg)";
           
         
-        educdiv.style.top = "0";
+    
         // Open "Education" content after a delay
         setTimeout(function() {
-            educdiv.style.display = "block";
+            projdiv.style.display = "block";
             div1.style.transform = "translateX(-100%)";
             div2.style.transform = "translateX(100%)";
             gear.style.transform += "rotate(180deg)";
@@ -216,10 +263,8 @@ function moveCon(event) {
             gear3.style.transform += "rotate(-180deg)";
           
         
-        educdiv.style.top = "0";
-        // Open "Education" content after a delay
         setTimeout(function() {
-            educdiv.style.display = "block";
+            condiv.style.display = "block";
             div1.style.transform = "translateX(-100%)";
             div2.style.transform = "translateX(100%)";
             gear.style.transform += "rotate(180deg)";
@@ -232,4 +277,10 @@ function moveCon(event) {
 
     // Prevent default link behavior
     event.preventDefault();
+    
+    $(document).ready(function() {
+        $('#exp').click(function() {
+            $('.experiencediv').toggleClass('flip');
+        });
+    });
 }

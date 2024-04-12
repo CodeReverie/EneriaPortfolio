@@ -1,14 +1,36 @@
-
-body{
-
-    /* background-image: linear-gradient(to right, #2c3e50,#2980b9,#33cccc,rgb(140, 178, 211), #0c5c91 ); */
-    background-image: linear-gradient(to top, #00ccff, rgb(98, 0, 255) );
+body {
     font-family: 'Inconsolata', monospace;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    height: 100%;
+    background-image: linear-gradient(to top, #00ccff, rgb(98, 0, 255));
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header, main, footer {
     width: 100%;
 }
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.titlebar {
+    background-color: rgba(36, 33, 71, 0.411);
+    text-align: center;
+    padding: 15px 0;
+}
+
+.contentMain {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0px;
+}
+
 .Navbarcontainer{
     display: flex;
     align-items: center;
@@ -86,7 +108,7 @@ li a:hover {
 
 .titlebar{
     position:relative;
-    background-color: rgba(36, 33, 71, 0.411);
+    background: linear-gradient(to right, rgba(28, 24, 68, 0.808), rgba(60, 56, 112, 0.411), rgba(28, 24, 68, 0.808));
     text-align: center;
     margin-left: 3%;
     margin-right: 3%;
@@ -116,19 +138,19 @@ li a:hover {
 
 .gear, .gear2, .gear3{
     position:absolute;
-    margin-top:550px;
-    margin-left:100px;
+    margin-top:500px;
+    margin-left:50px;
     height: 150px;
-   
+    z-index: 15;
 }
 .gear2{
-    margin-top:800px;
-    margin-left:80px;
+    margin-top:750px;
+    margin-left:30px;
   
 }
 .gear3{
-    margin-top:700px;
-    margin-left:200px;
+    margin-top:650px;
+    margin-left:150px;
 }
 .gear img, .gear2 img, .gear3 img{
     width: 150px;
@@ -139,30 +161,28 @@ li a:hover {
 .content{
     text-align: center;
     position: relative;
-    margin-left:3%;
+    margin-left: 3%;
     border-bottom-left-radius: 20px;
-    height:650px;
+    height: 650px;
     width: 50%;
-    background-color: rgba(36, 33, 71, 0.411);
-    float:left;
+    background: linear-gradient(to left, rgba(36, 33, 71, 0.411), rgba(36, 33, 71, 0.8));
+    float: left;
     transition: transform 0.5s ease;
     z-index: -5;
-    /* background-image: url('leftDoor.jpeg');
-   background-size: cover; */   
 }
+
 .content2{
     text-align: center;
     position: relative;
-    margin-right:3%;
-    border-bottom-right-radius:  20px;
-    height:650px;
+    margin-right: 3%;
+    border-bottom-right-radius: 20px;
+    height: 650px;
     width: 50%;
-    background-color: rgba(36, 33, 71, 0.411);
+    background: linear-gradient(to right, rgba(36, 33, 71, 0.411), rgba(36, 33, 71, 0.8));
     transition: transform 0.5s ease;
-    z-index:-10;
-    /* background-image: url('rightDoor.jpeg');
-    background-size: cover; */
+    z-index: -10;
 }
+
 .profiledetails{
     position: absolute;
     margin-top:10px;
@@ -182,7 +202,6 @@ li a:hover {
     font-family: "Patrick Hand", cursive;
     font-weight: 10;
    
-   
 }
 
 .profile-info h3 {
@@ -198,11 +217,12 @@ li a:hover {
     display: inline-block; /* Ensures the profile image and info are inline */
     vertical-align: top; /* Aligns the profile info to the top of the image */
     margin-left: 200px; /* Adjust the margin as needed */
-   
+    
     
 }
 
 .slime {
+    margin-left: 50px;
     margin-top: 10px;
     position: absolute;
     width: 200px; /* Adjust the size of the hexagon */
@@ -225,7 +245,7 @@ li a:hover {
     background-color: white;
     height: 200px;
     margin-top: 10px;
-    margin-left: 100px;
+    margin-left: 150px;
     padding-right: 20px;
     clip-path: polygon(88% 0, 100% 25%, 100% 75%, 88% 100%, 0 100%, 0 0);
     z-index: -5;
@@ -258,38 +278,101 @@ li a:hover {
 } */
 .educdiv{
     position: absolute;
-    margin-top:160px;
-    margin-left:12.5%;
-    height: 525px;
-    width: 75%;
-    background-color: white;
-    transition: transform 0.5s ease;
-    z-index: -15;
-    display:none;  
-}
-.educparagraph{
-    position: relative;
-    padding-left: 60px;
-    padding-right: 30px;
-    padding-top: 10px;
-    margin-top: 30px;
-    margin-left: 250px;
-    margin-right:250px;
-    height: 450px;
-    background-color: aliceblue;
-    border-radius: 25px;
-}
-
-.experiencediv{
-    position: absolute;
-    margin-top:160px;
+    margin-top:10px;
     margin-left:12.5%;
     height: 525px;
     width: 75%;
     background-color: rgba(248, 248, 248, 0.411);
     transition: transform 0.5s ease;
-    z-index: -15;
+ 
     display:none;  
+}
+.educparagraph{
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    margin-top: 20px;
+    margin-left: 75px;
+    margin-right:250px;
+    height: 450px;
+    width: 80%;
+    border-radius: 25px;
+}
+.logo, .logo2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.logo{
+    position: absolute;
+    top: 25%; /* Align the button vertically with the logo */
+    margin-top: -75px; /* Half of the button's height to center it */
+    left: 0px; /* Adjust the horizontal position as needed */
+    height: 150px;
+}
+.logo2 {
+    position: absolute;
+    top: 75%; /* Align the button vertically with the logo */
+    margin-top: -80px; /* Half of the button's height to center it */
+    left: 0px; /* Adjust the horizontal position as needed */
+    height: 150px;
+}
+
+
+.logo img, .logo2 img {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}
+.educdiv .text h1 {
+    font-size: 40px; /* Adjust size as needed */
+}
+
+.educdiv .text h2 {
+    font-size: 30px; /* Adjust size as needed */
+}
+
+.educdiv .text h3 {
+    font-size: 25px; /* Adjust size as needed */
+}
+.educdiv .text2 {
+    display: none;
+}
+
+
+
+.logo button {
+    position: absolute;
+    top: 25%; /* Align the button vertically with the logo */
+    margin-top: -75px; /* Half of the button's height to center it */
+    left: 900px; /* Adjust the horizontal position as needed */
+    height: 150px;
+}
+
+.logo2 button {
+    position: absolute;
+    top: 75%; /* Align the button vertically with the logo */
+    margin-top: -80px; /* Half of the button's height to center it */
+    left: 900px; /* Adjust the horizontal position as needed */
+    height: 150px;
+}
+
+
+
+
+.experiencediv{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 12.5%;
+    height: 525px;
+    width: 75%;
+    background-color: rgba(248, 248, 248, 0.411);
+    transition: transform 0.5s ease; /* Apply transition for smooth animation */
+    z-index: -15;
+    display: none;
+    transform-style: preserve-3d; /* Ensure proper 3D rendering */  
 }
 .exparagraph{
     position: relative;
@@ -297,16 +380,20 @@ li a:hover {
     padding-right: 30px;
     padding-top: 10px;
     margin-top: 30px;
-    margin-left: 250px;
-    margin-right:250px;
+    margin-left: 75px;
+    margin-right: 250px;
     height: 450px;
-    background-color: aliceblue;
+    width: 80%;
     border-radius: 25px;
+    backface-visibility: hidden; /* Hide the backface during the flip animation */
 }
 
+.experiencediv.flip {
+    transform: rotateY(180deg); /* Apply rotation for flip effect */
+}
 .projectsdiv{
     position: absolute;
-    margin-top:160px;
+    margin-top:10px;
     margin-left:12.5%;
     height: 525px;
     width: 75%;
@@ -330,7 +417,7 @@ li a:hover {
 
 .contactsdiv{
     position: absolute;
-    margin-top:160px;
+    margin-top:10px;
     margin-left:12.5%;
     height: 525px;
     width: 75%;
@@ -351,6 +438,7 @@ li a:hover {
     background-color: aliceblue;
     border-radius: 25px;
 }
+
 
 
 @keyframes spin {
