@@ -186,7 +186,8 @@ function moveexp(event) {
     
         // Open "Education" content after a delay
         setTimeout(function() {
-            expdiv.style.display = "block";
+            expdiv.style.display = "flex";
+           
             div1.style.transform = "translateX(-100%)";
             div2.style.transform = "translateX(100%)";
             gear.style.transform += "rotate(180deg)";

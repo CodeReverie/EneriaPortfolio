@@ -264,8 +264,6 @@ li a:hover {
     font-size: 24px;
 
 }
-
-
 /* .rimuru{
     margin-top: 350px;
     position: relative;
@@ -284,9 +282,15 @@ li a:hover {
     width: 75%;
     background-color: rgba(248, 248, 248, 0.411);
     transition: transform 0.5s ease;
- 
-    display:none;  
+    display:none; 
+  
 }
+
+
+
+
+
+
 .educparagraph{
     position: relative;
     padding-left: 30px;
@@ -359,9 +363,6 @@ li a:hover {
     height: 150px;
 }
 
-
-
-
 .experiencediv{
     position: absolute;
     margin-top: 10px;
@@ -373,7 +374,9 @@ li a:hover {
     z-index: -15;
     display: none;
     transform-style: preserve-3d; /* Ensure proper 3D rendering */  
+
 }
+
 .exparagraph{
     position: relative;
     padding-left: 60px;
@@ -386,11 +389,24 @@ li a:hover {
     width: 80%;
     border-radius: 25px;
     backface-visibility: hidden; /* Hide the backface during the flip animation */
+    display: flex;
+    flex-direction: row;
 }
 
 .experiencediv.flip {
     transform: rotateY(180deg); /* Apply rotation for flip effect */
 }
+.expLeft{
+
+background-color: #790a7d;
+}
+.expRight{
+    background-color: #790a7d;
+}
+
+
+
+
 .projectsdiv{
     position: absolute;
     margin-top:10px;
